@@ -12,13 +12,15 @@ F1 = 10    # Frequencias do sinal composto
 F2 = 50
 F3 = 100
 
+# Construir a forma de onda composta
 y = np.sin(2*np.pi*F1*t) + np.sin(2*np.pi*F2*t) + np.sin(2*np.pi*F3*t)
 
+# Fazer o FFT
 Y = np.abs(fft.fft(y))
-Y = Y[0:len(Y)/2]
+Y = Y[0:len(Y)/2] # E pegar so os elementos pares
+f = np.arange(0, len(Y)) * Fs/len(y)    # Calcular o vetor frequencia
 
-f = np.arange(0, len(Y)) * Fs/len(y)
-
+# Fazer os graficos
 plt.subplot(211)
 plt.plot(t, y)
 plt.xlabel('Tempo (s)')
