@@ -26,4 +26,4 @@ subplot(212);
 plot(f, Y);
 xlabel('f (Hz)');
 ylabel('Y');
-set(gca, 'xtick', 0:Fs/20:Fs/2);    % Colocar "ticks" a cada 50 Hz
+%set(gca, 'xtick', 0:Fs/20:Fs/2);    % Colocar "ticks" a cada 50 Hz
